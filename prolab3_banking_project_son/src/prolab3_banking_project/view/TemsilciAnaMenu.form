@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace pref="103" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="MusteriGenelDurumGoruntule" min="-2" max="-2" attributes="0"/>
+                  <Component id="musteriEkle" min="-2" pref="199" max="-2" attributes="0"/>
+                  <Component id="bilgiGuncelle" min="-2" pref="199" max="-2" attributes="0"/>
+                  <Component id="musteriSil" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
+                  <Component id="musteriIslemGoruntule" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
+                  <Component id="musteriTalepGoruntule" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="bilgiGuncelle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="musteriEkle" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="musteriSil" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="musteriIslemGoruntule" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="musteriTalepGoruntule" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="MusteriGenelDurumGoruntule" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="bilgiGuncelle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bilgi G&#xfc;ncelle"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bilgiGuncelleActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="musteriEkle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri Ekle"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="musteriEkleActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="musteriSil">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri Sil"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="musteriIslemGoruntule">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri &#x130;&#x15f;lemlerini G&#xf6;r&#xfc;nt&#xfc;le"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="musteriTalepGoruntule">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri Taleplerini G&#xf6;r&#xfc;nt&#xfc;le"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="MusteriGenelDurumGoruntule">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri Genel Durum G&#xf6;r&#xfc;nt&#xfc;le"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
