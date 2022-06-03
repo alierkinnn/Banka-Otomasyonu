@@ -13,7 +13,7 @@ public class Credit extends Product{
     private Double interestRate;
     private int expiry;
     private int approval;
-    private Long accountId;
+    private Long customerNumber;
 
     public Double getMainAmount() {
         return mainAmount;
@@ -63,12 +63,14 @@ public class Credit extends Product{
         this.approval = approval;
     }
 
-    public Long getAccountId() {
-        return accountId;
+    public Long getCustomerNumber() {
+        return customerNumber;
     }
 
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
+    public void setCustomerNumber(Long customerNumber) {
+        this.customerNumber = customerNumber;
     }
+
+    
     
 }

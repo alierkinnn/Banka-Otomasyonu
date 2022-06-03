@@ -102,7 +102,7 @@ public class AccountServiceImpl implements AccountService{
     }
 
     @Override
-    public ResponseModel<List<Account>> paraGonder(Account account, String amount, long iban) {   
+    public ResponseModel<List<Account>> paraGonder(Account account, String amount, String iban) {   
         List<Account> list=new ArrayList<>();        
         ResponseModel<List<Account>> responsemodel=new ResponseModel<>();
         Account targetAccount=new Account();
@@ -123,11 +123,14 @@ public class AccountServiceImpl implements AccountService{
                 responsemodel.setMessage("Para transfer işlemi başarılı ve hesap bakiyesi sekmeyi yeniden açınca geçerli olacaktır!");
                 responsemodel.setResponseObject(list);
                 return responsemodel;
-            }else{                
-                return null;        
+            }else{
+                responsemodel.setSuccess(false);
+                responsemodel.setResponseObject(null);
+                responsemodel.setMessage("Yetersiz bakiye");
+                
             }
         }            
-        return null;
+        return responsemodel;
     }
     
     public ResponseModel<List<Account>> kayitliHesaplar(){
@@ -137,7 +140,7 @@ public class AccountServiceImpl implements AccountService{
         list.addAll(accountrepository.findByCustomerId(customer.getCustomerNumber()));
         if(list.isEmpty()){
             responsemodel.setSuccess(false);
-            responsemodel.setMessage("Adınıza kayıtlı hesap bulunamadı");
+            responsemodel.setMessage("kayıtlı müşteriniz bulunamadı");
             responsemodel.setResponseObject(null);
         }
         else{

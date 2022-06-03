@@ -5,6 +5,7 @@
 package prolab3_banking_project.service;
 
 import prolab3_banking_project.model.Credit;
+import prolab3_banking_project.model.Customer;
 import prolab3_banking_project.model.ResponseModel;
 
 /**
@@ -13,11 +14,11 @@ import prolab3_banking_project.model.ResponseModel;
  */
 public interface CreditService {
     
-    ResponseModel<Credit> krediTalep(Credit account,String amount);
+    ResponseModel<Credit> krediTalep(Customer customer,Double amount,int expiry);
     
-    ResponseModel<Boolean> krediOnay(Credit account,String amount);
+    ResponseModel<Boolean> krediOnay(Credit credit);
     
-    ResponseModel<Boolean> krediRed(Credit account,String amount);
+    ResponseModel<Boolean> krediRed(Credit credit);
     
     ResponseModel<Credit> krediBorcuOde(Credit account,String amount);
     

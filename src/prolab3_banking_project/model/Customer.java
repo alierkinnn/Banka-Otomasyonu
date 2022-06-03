@@ -18,6 +18,16 @@ public class Customer {
     private boolean gender;
     private Date birthDate;
     private String email;
+    private Long representerId;
+
+    public Long getRepresenterId() {
+        return representerId;
+    }
+
+    public void setRepresenterId(Long representerId) {
+        this.representerId = representerId;
+    }
+
 
     public String getEmail() {
         return email;

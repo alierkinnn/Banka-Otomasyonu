@@ -25,15 +25,23 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace pref="103" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="MusteriGenelDurumGoruntule" min="-2" max="-2" attributes="0"/>
-                  <Component id="musteriEkle" min="-2" pref="199" max="-2" attributes="0"/>
-                  <Component id="bilgiGuncelle" min="-2" pref="199" max="-2" attributes="0"/>
-                  <Component id="musteriSil" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
-                  <Component id="musteriIslemGoruntule" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
-                  <Component id="musteriTalepGoruntule" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="MusteriGenelDurumGoruntule" min="-2" max="-2" attributes="0"/>
+                          <Component id="musteriEkle" min="-2" pref="199" max="-2" attributes="0"/>
+                          <Component id="bilgiGuncelle" min="-2" pref="199" max="-2" attributes="0"/>
+                          <Component id="musteriSil" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
+                          <Component id="musteriIslemGoruntule" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
+                          <Component id="musteriTalepGoruntule" alignment="1" min="-2" pref="199" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="logout" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,7 +60,9 @@
               <Component id="musteriTalepGoruntule" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="MusteriGenelDurumGoruntule" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="46" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="logout" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,21 +88,41 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri Sil"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="musteriSilActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="musteriIslemGoruntule">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri &#x130;&#x15f;lemlerini G&#xf6;r&#xfc;nt&#xfc;le"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="musteriIslemGoruntuleActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="musteriTalepGoruntule">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri Taleplerini G&#xf6;r&#xfc;nt&#xfc;le"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="musteriTalepGoruntuleActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MusteriGenelDurumGoruntule">
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teri Genel Durum G&#xf6;r&#xfc;nt&#xfc;le"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MusteriGenelDurumGoruntuleActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="logout">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc7;&#x131;k&#x131;&#x15f;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

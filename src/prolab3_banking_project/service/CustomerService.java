@@ -13,6 +13,6 @@ public interface CustomerService {
     
     ResponseModel<Customer> bilgiGuncelle(String email,String phone,String adress);
     
-    ResponseModel<Customer> musteriEkle(Long id,String name,String surname,String phone,String adress,String email,String password);
+    ResponseModel<Boolean> musteriEkle(Long id,String name,String surname,String phone,String adress,String email,String password);
     
 }

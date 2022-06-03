@@ -32,7 +32,7 @@ public class LoginServiceImpl implements LoginService{
             CustomerSession.setCustomer(customer);
             return responsemodel;
     
-    }    
+    }
     
     public void logout(){
         

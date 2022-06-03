@@ -62,7 +62,7 @@ public class AccountRepository {
         
     }
     
-    public Account findByIban(Long iban){
+    public Account findByIban(String iban){
         String sql="SELECT * FROM ACCOUNT WHERE IBAN=?";
         Account account=new Account();
         
@@ -70,7 +70,7 @@ public class AccountRepository {
         ResultSet rs=null;
         try{
             ps=con.prepareStatement(sql);
-            ps.setLong(1,iban);
+            ps.setString(1,iban);
             rs=ps.executeQuery();
             if(rs.next()){
                 account.setId(rs.getLong("ID"));
@@ -129,7 +129,6 @@ public class AccountRepository {
                 account.setBalance(rs.getDouble("BALANCE"));
                 account.setName(rs.getString("NAME"));
                 account.setIban(rs.getString("IBAN"));
-                account.setCustomer(customerrepository.findByCustomerId(rs.getLong("CUSTOMERNUMBER")));
                 list.add(account);
             }
             return list;

@@ -8,6 +8,8 @@ import prolab3_banking_project.model.CustomerRepresenter;
 import prolab3_banking_project.model.ResponseModel;
 import prolab3_banking_project.repository.CustomerRepresenterLoginRepository;
 import prolab3_banking_project.service.CustomerRepresenterLoginService;
+import prolab3_banking_project.session.CustomerRepresenterSession;
+import prolab3_banking_project.session.CustomerSession;
 
 /**
  *
@@ -32,8 +34,15 @@ public class CustomerRepresenterLoginServiceImpl implements CustomerRepresenterL
                 responsemodel.setMessage("Giriş işlemi başarılı.");
                 responsemodel.setResponseObject(customerRepresenter);
             }
-            //CustomerSession.setCustomer(customer);
+            CustomerRepresenterSession.setRepresenter(customerRepresenter);
             return responsemodel;
     }
+    
+    public void logout(){
+        
+        CustomerRepresenterSession.clear();
+        
+    }
+    
     
 }

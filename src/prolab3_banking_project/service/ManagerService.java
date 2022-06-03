@@ -9,24 +9,24 @@ import prolab3_banking_project.model.ResponseModel;
 
 public interface ManagerService {
     
-    ResponseModel<Boolean> faizAyarla();
+    //ResponseModel<Boolean> faizAyarla();
     
-    ResponseModel<Boolean> gecikmeFaiziAyarla();
+    //ResponseModel<Boolean> gecikmeFaiziAyarla();
     
-    ResponseModel<Boolean> paraBirimiEkle();
+    //ResponseModel<Boolean> paraBirimiEkle();
     
-    ResponseModel<Boolean> kurGuncelle();
+    //ResponseModel<Boolean> kurGuncelle();
     
-    ResponseModel<Boolean> maasBelirle();
+    ResponseModel<Boolean> maasBelirle(Long Salary);
     
-    ResponseModel<Boolean> musteriEkle(String name,String surname,String identityNumber,
-            Long id,String phone,String address,String password);
+    //ResponseModel<Boolean> musteriEkle(String name,String surname,String identityNumber,
+            //Long id,String phone,String address,String password);
     
-    ResponseModel<Boolean> sistemiIlerlet(); //burası çok önemli
+    //ResponseModel<Boolean> sistemiIlerlet(); //burası çok önemli
     
-    ResponseModel<Boolean> islemGoruntule();//bakıcaz hocam
+    //ResponseModel<Boolean> islemGoruntule();//bakıcaz hocam
     
-    ResponseModel<Boolean> genelDurumGoruntule();//bakıcaz hocam
+    //ResponseModel<Boolean> genelDurumGoruntule();//bakıcaz hocam
     
     
     

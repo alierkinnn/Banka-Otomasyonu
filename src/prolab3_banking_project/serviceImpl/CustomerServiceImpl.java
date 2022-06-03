@@ -12,6 +12,7 @@ import prolab3_banking_project.repository.CustomerRepository;
 import prolab3_banking_project.service.CustomerService;
 import prolab3_banking_project.session.CustomerSession;
 
+
 /**
  *
  * @author erene
@@ -45,8 +46,21 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public ResponseModel<Customer> musteriEkle(Long id, String name, String surname, String phone, String adress, String email, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ResponseModel<Boolean> musteriEkle(Long id, String name, String surname, String phone, String adress, String email, String password) {
+        
+        ResponseModel responseModel = new ResponseModel();
+        
+        if(customerrepository.musteriEkle(id,  name,  surname,  phone,  adress,  email,  password)==false){
+            responseModel.setSuccess(false);
+            responseModel.setMessage("İşlem Başarısız");
+        }
+        else{
+            responseModel.setSuccess(true);
+            responseModel.setMessage("İşlem Başarılı");
+            
+        }
+        
+        return responseModel;
     }
     
 }

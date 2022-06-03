@@ -40,6 +40,7 @@ public class LoginRepository {
                 customer.setIdentityNumber(rs.getString("IDENTITYNUMBER"));
                 customer.setPhone(rs.getString("PHONE"));
                 customer.setEmail(rs.getString("EMAIL"));
+                customer.setRepresenterId(rs.getLong("REPRESENTERID"));
                 
                 return customer;
             }

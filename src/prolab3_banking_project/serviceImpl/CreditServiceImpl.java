@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import prolab3_banking_project.model.Customer;
+import prolab3_banking_project.session.CustomerSession;
 
 
 public class CreditServiceImpl {
@@ -23,23 +25,23 @@ public class CreditServiceImpl {
     private AccountServiceImpl accountService=new AccountServiceImpl();
     private AccountRepository accountRepository=new AccountRepository();
     
-    /*public ResponseModel<Credit> krediBasvurusu(Account account ,Double amount){
+    public ResponseModel<Credit> krediTalep(Customer customer,Double amount,int expiry){
         ResponseModel<Credit> responsemodel=new ResponseModel();
         Credit credit=new Credit();
-        //credit.setCustomer(account.getCustomer());
+        credit.setCustomer(CustomerSession.getCustomer());
         //credit.setExpiry();
         credit.setCurrentAmount(amount);
         credit.setMainAmount(amount);
         credit.setTotalAmount(amount+amount*14/1000*24);
         credit.setInterestRate(Double.valueOf(14/1000));
-        credit.setAccountId(account.getId());
+        credit.setCustomerNumber(CustomerSession.getCustomer().getCustomerNumber());
         Calendar calender = Calendar.getInstance();
         Date date=new Date();
         calender.setTime(date);
         calender.add(Calendar.YEAR, 2);
         date = calender.getTime();
         //credit.setExpiry();
-        if(creditRepository.insertCredit(credit)!=null){
+        if(creditRepository.krediEkle(credit)!=null){
             
             responsemodel.setSuccess(true);
             responsemodel.setResponseObject(credit);
@@ -56,7 +58,7 @@ public class CreditServiceImpl {
 
     }
     
-    public ResponseModel<List<Credit>> kayıtlıBasvurular(){
+    /*public ResponseModel<List<Credit>> kayıtlıBasvurular(){
         List<Credit> list=new ArrayList<>();
         ResponseModel<List<Credit>> responsemodel=new ResponseModel<>();
         list=creditRepository.findCreditAppeals();

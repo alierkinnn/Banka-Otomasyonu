@@ -8,10 +8,14 @@ import javax.swing.JOptionPane;
 import prolab3_banking_project.model.ResponseModel;
 import prolab3_banking_project.service.CustomerRepresenterLoginService;
 import prolab3_banking_project.service.LoginService;
+import prolab3_banking_project.service.ManagerLoginService;
 import prolab3_banking_project.serviceImpl.CustomerRepresenterLoginServiceImpl;
 
 import prolab3_banking_project.serviceImpl.LoginServiceImpl;
+import prolab3_banking_project.serviceImpl.ManagerLoginServiceImpl;
+import prolab3_banking_project.session.CustomerRepresenterSession;
 import prolab3_banking_project.session.CustomerSession;
+import prolab3_banking_project.session.ManagerSession;
     
     
 /**
@@ -22,11 +26,13 @@ public class LoginGui extends javax.swing.JFrame {
 
     private LoginService loginService = (LoginService) new LoginServiceImpl();
     private CustomerRepresenterLoginService customerRepresenterLoginService = (CustomerRepresenterLoginService) new CustomerRepresenterLoginServiceImpl();
+    private ManagerLoginService managerLoginService = (ManagerLoginService) new ManagerLoginServiceImpl();
     /**
      * Creates new form LoginGui
      */
     public LoginGui() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -54,6 +60,11 @@ public class LoginGui extends javax.swing.JFrame {
         temsilciTc = new javax.swing.JTextField();
         temsilciSifre = new javax.swing.JPasswordField();
         jPanel4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        mudurId = new javax.swing.JTextField();
+        mudurSifre = new javax.swing.JPasswordField();
+        mudurGiris = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,7 +79,7 @@ public class LoginGui extends javax.swing.JFrame {
 
         jLabel3.setText("Şifre");
 
-        jLabel2.setText("tc");
+        jLabel2.setText("müşteri no");
 
         musteriSifre.setText("jPasswordField1");
 
@@ -83,9 +94,9 @@ public class LoginGui extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(musteriTc)
                     .addComponent(musteriSifre, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
@@ -109,7 +120,7 @@ public class LoginGui extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Müşteri", jPanel2);
 
-        jLabel4.setText("tc");
+        jLabel4.setText("temsilci no");
 
         jLabel5.setText("şifre");
 
@@ -130,12 +141,12 @@ public class LoginGui extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(temsilciTc)
                     .addComponent(temsilciSifre, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(temsilciGiris)
@@ -159,15 +170,52 @@ public class LoginGui extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Temsilci", jPanel3);
 
+        jLabel6.setText("id");
+
+        jLabel7.setText("Şifre");
+
+        mudurSifre.setText("jPasswordField1");
+
+        mudurGiris.setText("Giriş");
+        mudurGiris.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mudurGirisActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(mudurId)
+                    .addComponent(mudurSifre, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mudurGiris, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 190, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(mudurId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(mudurSifre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(mudurGiris, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Müdür", jPanel4);
@@ -216,7 +264,7 @@ public class LoginGui extends javax.swing.JFrame {
         
         if(model.isSuccess()==true){
             this.setVisible(false);
-            new AnaMenü().setVisible(true);
+            new MusteriAnaMenü().setVisible(true);
             CustomerSession.getParentFrame().add(this);
         }
         else{
@@ -230,12 +278,25 @@ public class LoginGui extends javax.swing.JFrame {
         if(model.isSuccess()==true){
             this.setVisible(false);
             new TemsilciAnaMenu().setVisible(true);
-            CustomerSession.getParentFrame().add(this);
+            CustomerRepresenterSession.getParentFrame().add(this);
         }
         else{
             JOptionPane.showMessageDialog(null, model.getMessage());
         }  
     }//GEN-LAST:event_temsilciGirisActionPerformed
+
+    private void mudurGirisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mudurGirisActionPerformed
+        ResponseModel model = managerLoginService.login(Long.parseLong(mudurId.getText()), mudurSifre.getText());//ÖRNEK
+        
+        if(model.isSuccess()==true){
+            this.setVisible(false);
+            new MudurAnaMenu1().setVisible(true);
+            ManagerSession.getParentFrame().add(this);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, model.getMessage());
+        }
+    }//GEN-LAST:event_mudurGirisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,11 +339,16 @@ public class LoginGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton mudurGiris;
+    private javax.swing.JTextField mudurId;
+    private javax.swing.JPasswordField mudurSifre;
     private javax.swing.JButton musteriGiris;
     private javax.swing.JPasswordField musteriSifre;
     private javax.swing.JTextField musteriTc;

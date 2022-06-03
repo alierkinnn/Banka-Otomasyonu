@@ -10,6 +10,27 @@ public class CustomerRepresenter {
    private String surname;
    private String phone;
    private String password;
+   private Long salary;
+
+    public Long getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Long salary) {
+        this.salary = salary;
+    }
+   
+   
+   /*private String identityNumber;
+
+    public String getIdentityNumber() {
+        return identityNumber;
+    }
+
+    public void setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
+    }*/
+
 
     public String getPassword() {
         return password;

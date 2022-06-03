@@ -20,6 +20,6 @@ public interface AccountService {
     
     ResponseModel<Account> ozetGoruntule(Account account); //bakılacak
     
-    ResponseModel<List<Account>> paraGonder(Account account,String amount,long iban);
+    ResponseModel<List<Account>> paraGonder(Account account,String amount,String iban);
     
 }

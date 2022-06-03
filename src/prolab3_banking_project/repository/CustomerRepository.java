@@ -70,4 +70,33 @@ public class CustomerRepository {
         
     return customer;
     }
+    
+    public boolean musteriEkle(Long id, String name, String surname, String phone, String adress, String email, String password){
+        Customer customer = new Customer();
+        String sql = "INSERT INTO CUSTOMER(IDENTITYNUMBER,NAME,SURNAME,PHONE,ADRESS,EMAIL,PASSWORD,ID) VALUES (?,?,?,?,?,?,?,(SELECT MAX(ID)+1 FROM CUSTOMER))";
+        
+        PreparedStatement ps = null;
+        try{
+            ps=con.prepareStatement(sql);
+            
+            ps.setLong(1, id);
+            ps.setString(2, name);
+            ps.setString(3, surname);
+            ps.setString(4, phone);
+            ps.setString(5,adress);
+            ps.setString(6,email);
+            ps.setString(7, password);
+          
+            ps.executeUpdate();
+             
+        }catch(SQLException ex){
+            ex.printStackTrace();
+            return false;        
+        }                  
+        
+    return true;
+        
+        
+    }
+    
 }
